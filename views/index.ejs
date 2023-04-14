@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visitor Entry Form</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
+</head>
+
+<body>
+    <section class="form-main">
+        <div class="form-content">
+            <div class="circle-1"></div>
+            <div class="circle-2"></div>
+            <div class="circle-3"></div>
+            <div class="box">
+                <img src="images/1.png" alt="" class="img">
+                <h3>Entry Form</h3>
+                <form action="/" method="post" enctype="multipart/form-data">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_next" value="https://www.google.com">
+                    <input type="hidden" name="_template" value="table">
+                    <div class="form-outline mb-5 ">
+                        <label class="form-label date " for="form3Example1cg">
+                          <h6 class="datebox">Date : <span id="time"> </span></h6>
+                        </label>
+                        <label class="form-label date" for="form3Example1cg">
+                          <h6 class="datebox">Time : <span id="time1"> </span></h6>
+                        </label>
+                      </div>
+                    <div class="input-box">
+                        <label for="select-option">Purpose of Meeting:
+                        </label>
+                        <select class="input-control" id="select-option" name="purpose">
+                            <option value="">--Select--</option>
+                            <option value="faculty" style="color: hsl(0, 0%, 0%);">Faculty</option>
+                            <option value="delivery" style="color: hsl(0, 0%, 0%);">Delivery</option>
+                            <option value="other" style="color: hsl(0, 0%, 0%);">Others</option>
+                        </select>
+                    </div>
+                    <div id="content-1" class="hidden">
+                       
+                        <div class="input-box">
+                            <input type="text" name="facultyid" id="" placeholder="ID" class="input-control">
+                        </div>
+                        <div class="input-box">
+                            <input type="text" name="department" id="" placeholder="Department" class="input-control">
+                        </div>
+                        
+                       
+                        </div>
+                        <div id="content-2" class="hidden">
+                            <div class="input-box">
+                                <label for="select-option">Delivery Type:
+                                </label>
+                                <select class="input-control" id="select-option" name="deliverypurpose">
+                                    <option value="">--Select--</option>
+                                    <option value="courier/parcel" style="color: hsl(0, 0%, 0%);">Courier/Parcel</option>
+                                    <option value="rawmaterials" style="color: hsl(0, 0%, 0%);">Raw Materials</option>
+                                    <option value="fooddelivery" style="color: hsl(0, 0%, 0%);">Food Delivery</option>
+                                </select>
+                            </div>
+                            <div class="input-box">
+                                <input type="text" class="input-control" placeholder="Delivery Company"name="deliverycompany">
+                            </div>
+                            <div class="input-box">
+                                <input type="text" class="input-control" placeholder="Delivery To"name="deliveryto">
+                            </div>
+                        </div>
+                    <div id="content-3" class="hidden">
+                        <div class="input-box">
+                            <input type="text" class="input-control" placeholder="Others Purpose"name="Purpose">
+                        </div>
+                    </div>
+                    <div class="input-box">
+                        <input type="text" name="title" id="" placeholder="Name" class="input-control">
+                    </div>
+                    <div class="input-box">
+                        <input type="tel" name="phone" id="" placeholder="Phone Number" class="input-control">
+                    </div>
+                    <div class="input-box">
+
+                       
+                    <div class="input-box file">
+                        <input type="file" accept="image/*" capture="camera" name="photo" id="file-input"
+                            class="input-control">
+                            <!-- <label for="file-input" class="input-control veh">Vehicle Photo <i class="ri-add-circle-fill" style="font-size: 25px; margin-left: 200px; margin-top: 20px; color: hsl(288, 60%, 50%)"></i></label> -->
+                    </div>
+                    <button type="submit" class="btn">Submit</button>
+                </form>
+
+            </div>
+        </div>
+    </section>
+</body>
+<script>
+      const selectOption = document.getElementById("select-option");
+      const content1 = document.getElementById("content-1");
+      const content2 = document.getElementById("content-2");
+      const content3 = document.getElementById("content-3");
+
+      selectOption.addEventListener("change", (event) => {
+        if (event.target.value === "faculty") {
+          content1.classList.remove("hidden");
+          content2.classList.add("hidden");
+          content3.classList.add("hidden");
+        } else if (event.target.value === "delivery") {
+          content1.classList.add("hidden");
+          content2.classList.remove("hidden");
+          content3.classList.add("hidden");
+        } else if (event.target.value === "other") {
+          content1.classList.add("hidden");
+          content2.classList.add("hidden");
+          content3.classList.remove("hidden");
+        }
+      });
+    `use strict`
+    var datetime = new Date().toDateString();
+    console.log(datetime); // it will represent date in the console of developer tool
+    document.getElementById("time").textContent = datetime; // represent on html page
+
+
+    `use strict`
+    var datetime = new Date().toLocaleTimeString();
+    console.log(datetime); // it will represent date in the console of developers tool
+    document.getElementById("time1").textContent = datetime; // represent on html page
+</script>
+
+</html>
+

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Pure CSS Table Highlight (vertical & horizontal)</title>
+  
+  
+  
+      <link rel="stylesheet" href="css/style.css">
+
+  
+</head>
+
+<body>
+  <div class="container">
+	<table>
+		<thead>
+			<tr>
+        <th class="header__item filter__link" scope="col">Date</th>
+        <th class="header__item filter__link" scope="col">Time</th>
+        <th class="header__item filter__link" scope="col">Purpose of Entry</th>
+        <th class="header__item filter__link" scope="col">Faculty ID</th>
+        <th class="header__item filter__link" scope="col">Department</th>
+        <th class="header__item filter__link" scope="col">Delivery Purpose</th>
+        <th class="header__item filter__link" scope="col">Delivery Company</th>
+        <th class="header__item filter__link" scope="col">Delivery To</th>
+        <th class="header__item filter__link" scope="col">Others Purpose</th>
+        <th class="header__item filter__link" scope="col">Name</th>
+        <th class="header__item filter__link" scope="col">Phone Number</th>
+        <th class="header__item filter__link" scope="col">Vehicle Photo</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<% VisitorsList.forEach(visitor => { %>
+          <tr class="table-row">
+            <td class="table-data"><%= visitor.date %></td>
+              <td class="table-data"><%= visitor.time %></td>
+              <td class="table-data"><%= visitor.purpose %></td>
+              <td class="table-data"><%= visitor.facultyid %></td>
+              <td class="table-data"><%= visitor.department %></td>
+              <td class="table-data"><%= visitor.deliverypurpose %></td>
+              <td class="table-data"><%= visitor.deliverycompany %></td>
+              <td class="table-data"><%= visitor.deliveryto %></td>
+              <td class="table-data"><%= visitor.Purpose %></td>
+              <td class="table-data"><%= visitor.title %></td>
+              <td class="table-data"><%= visitor.phone %></td>
+              <td class="table-data"><img src="uploads/<%= visitor.Vehiclephoto %>" alt="pho" style="width: 50px; height: 50px;"></td>
+            </tr>
+            <%})%>
+			</tr>
+			
+		</tbody>
+	</table>
+</div>
+  
+  
+</body>
+</html>
+
+
